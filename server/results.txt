@@ -1,0 +1,7 @@
+Training Results:
+Logistic Regression: 0.7532
+Random Forest: 0.7338
+XGBoost: 0.7143
+SVM: 0.7468
+
+Best Model: Logistic Regression with Accuracy: 0.7532

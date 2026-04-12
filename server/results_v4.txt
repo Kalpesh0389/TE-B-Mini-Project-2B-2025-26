@@ -1,0 +1,10 @@
+Training Results (Feature Engineering + Ensemble):
+Ensemble Accuracy: 0.7403
+              precision    recall  f1-score   support
+
+           0       0.86      0.72      0.78        99
+           1       0.61      0.78      0.68        55
+
+    accuracy                           0.74       154
+   macro avg       0.73      0.75      0.73       154
+weighted avg       0.77      0.74      0.75       154

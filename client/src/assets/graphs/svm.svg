@@ -1,0 +1,112 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define arrow markers for annotations -->
+  <defs>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="red" />
+    </marker>
+    <marker id="arrow-black" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="black" />
+    </marker>
+  </defs>
+
+  <!-- Axes -->
+  <line x1="50" y1="350" x2="550" y2="350" stroke="black" stroke-width="2" marker-end="url(#arrow-black)"/> <!-- X Axis -->
+  <line x1="50" y1="350" x2="50" y2="50" stroke="black" stroke-width="2" marker-end="url(#arrow-black)"/> <!-- Y Axis -->
+
+  <text x="300" y="390" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Feature 1</text>
+  <text x="20" y="200" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" transform="rotate(-90, 20, 200)">Feature 2</text>
+
+  <!-- Hyperplanes -->
+  <!-- Middle Line (Decision Boundary) - Solid -->
+  <line x1="100" y1="100" x2="450" y2="300" stroke="black" stroke-width="1.5" />
+
+  <!-- Positive Hyperplane (Top) - Dashed -->
+  <line x1="130" y1="65" x2="480" y2="265" stroke="black" stroke-width="1.5" stroke-dasharray="8,5" />
+
+  <!-- Negative Hyperplane (Bottom) - Dashed -->
+  <line x1="70" y1="135" x2="420" y2="335" stroke="black" stroke-width="1.5" stroke-dasharray="8,5" />
+
+
+  <!-- Data Points -->
+  <!-- Class 1: Blue Diamonds (rotated squares) - above positive hyperplane -->
+  <g fill="#0d47a1">
+    <!-- Support Vector Points (on the line) -->
+    <rect x="220" y="105" width="12" height="12" transform="rotate(45, 226, 111)" />
+    <rect x="350" y="165" width="12" height="12" transform="rotate(45, 356, 171)" />
+
+    <!-- Other points -->
+    <rect x="280" y="60" width="12" height="12" transform="rotate(45, 286, 66)" />
+    <rect x="320" y="90" width="12" height="12" transform="rotate(45, 326, 96)" />
+    <rect x="380" y="60" width="12" height="12" transform="rotate(45, 386, 66)" />
+    <rect x="390" y="110" width="12" height="12" transform="rotate(45, 396, 116)" />
+    <rect x="430" y="80" width="12" height="12" transform="rotate(45, 436, 86)" />
+    <rect x="360" y="130" width="12" height="12" transform="rotate(45, 366, 136)" />
+    <rect x="400" y="150" width="12" height="12" transform="rotate(45, 406, 156)" />
+    <rect x="450" y="160" width="12" height="12" transform="rotate(45, 456, 166)" /> <!-- Adjusted -->
+    <rect x="250" y="85" width="12" height="12" transform="rotate(45, 256, 91)" />
+    <rect x="440" y="120" width="12" height="12" transform="rotate(45, 446, 126)" />
+  </g>
+
+  <!-- Class 2: Yellow Triangles - below negative hyperplane -->
+  <g fill="#ffa000">
+    <!-- Support Vector Points (on the line) -->
+    <path d="M 310,260 L 322,250 L 322,270 Z" transform="rotate(0)" /> <!-- Triangle pointing right? Image has triangles pointing right -->
+    <!-- Let's draw clearer triangles pointing right -->
+    <!-- Point 1 (Support Vector) near line -->
+    <path d="M 310,270 L 310,250 L 330,260 Z" fill="#ffa000" /> <!-- Adjusting position to be on line -->
+    <!-- Line eq: passing through roughly (70,135) and (420,335). Point (300, 266) approx -->
+    <!-- Let's manually place support vectors on line -->
+    <!-- On line x1=70 y1=135, x2=420 y2=335. -->
+    
+    <!-- Support Vector 1 -->
+    <path d="M 300,265 L 300,285 L 320,275 Z" fill="#ffa000" />
+    
+    <!-- Support Vector 2 -->
+    <path d="M 190,205 L 190,225 L 210,215 Z" fill="#ffa000" />
+
+    <!-- Other points -->
+    <path d="M 90,210 L 90,230 L 110,220 Z" fill="#ffa000" />
+    <path d="M 110,180 L 110,200 L 130,190 Z" fill="#ffa000" />
+    <path d="M 130,270 L 130,290 L 150,280 Z" fill="#ffa000" />
+    <path d="M 150,230 L 150,250 L 170,240 Z" fill="#ffa000" />
+    <path d="M 180,290 L 180,310 L 200,300 Z" fill="#ffa000" />
+    <path d="M 230,250 L 230,270 L 250,260 Z" fill="#ffa000" />
+    <path d="M 240,300 L 240,320 L 260,310 Z" fill="#ffa000" />
+    <path d="M 180,150 L 180,170 L 200,160 Z" fill="#ffa000" /> <!-- Farther out -->
+    <path d="M 90,290 L 90,310 L 110,300 Z" fill="#ffa000" />
+    <path d="M 310,320 L 310,340 L 330,330 Z" fill="#ffa000" />
+  </g>
+
+  <!-- Annotations (Red Arrows & Text) -->
+  
+  <!-- "Maximum Margin" Top -->
+  <text x="560" y="30" text-anchor="end" font-family="Arial" font-size="14" fill="#4a148c" font-weight="bold">Maximum Margin</text>
+  <path d="M 500,40 L 130,60" fill="none" stroke="red" stroke-width="1" marker-end="url(#arrow-red)"/> <!-- Pointing to margin line or space? Image points to space between dotted lines? No, image has bracket-like arrows? -->
+  <!-- Image: "Maximum Margin" text top right. Arrow points to top dashed line? No, it points to the space. -->
+  <!-- Let's point to the top dashed line for clarity or mimic image. Image arrow points from text to top dashed line. -->
+  <line x1="500" y1="35" x2="140" y2="60" stroke="red" stroke-width="1" marker-end="url(#arrow-red)" opacity="0.5"/> <!-- Simplified -->
+
+  <!-- "Support Vectors" -->
+  <text x="560" y="60" text-anchor="end" font-family="Arial" font-size="14" fill="#4a148c" font-weight="bold">Support Vectors</text>
+  <!-- Arrow to blue diamond SV -->
+  <path d="M 500,65 L 230,105" fill="none" stroke="red" stroke-width="1" marker-end="url(#arrow-red)" />
+  <!-- Arrow to yellow triangle SV -->
+  <path d="M 500,65 L 305,265" fill="none" stroke="red" stroke-width="1" marker-end="url(#arrow-red)" />
+
+  <!-- "Positive Hyperplane" -->
+  <text x="580" y="170" text-anchor="end" font-family="Arial" font-size="14" fill="#4a148c" font-weight="bold">Positive Hyperplane</text>
+  <line x1="450" y1="170" x2="350" y2="185" stroke="red" stroke-width="1" marker-end="url(#arrow-red)" />
+
+  <!-- "Maximum Margin" Middle (between lines) -->
+  <text x="580" y="210" text-anchor="end" font-family="Arial" font-size="14" fill="#4a148c" font-weight="bold">Maximum Margin</text>
+  <line x1="450" y1="210" x2="330" y2="210" stroke="red" stroke-width="1" marker-end="url(#arrow-red)" /> <!-- Pointing into gap -->
+
+  <!-- "Negative Hyperplane" -->
+  <text x="580" y="280" text-anchor="end" font-family="Arial" font-size="14" fill="#4a148c" font-weight="bold">Negative Hyperplane</text>
+  <line x1="450" y1="280" x2="350" y2="290" stroke="red" stroke-width="1" marker-end="url(#arrow-red)" />
+
+  <!-- Additional "Maximum Margin" lines (parallel to hyperplanes) to show width? -->
+  <!-- Image has line separate from graph perpendicular to hyperplanes to show margin width. -->
+  <!-- Let's skip complex geometry and rely on labels/arrows. -->
+
+</svg>

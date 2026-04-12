@@ -1,0 +1,5 @@
+Training Results (with SMOTE and Tuning):
+Random Forest: 0.7597
+XGBoost: 0.7403
+
+Best Model: Random Forest with Accuracy: 0.7597
